@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: balanced
+    nginx.ingress.kubernetes.io/backend-protocol: http
+    nginx.ingress.kubernetes.io/permanent-redirect-code: "301"
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+    platformer_ingress_id: ad2b0a23-595f-4dc5-9ee3-a6395d57ea8f
+  labels:
+    platformer_ingress_id: ad2b0a23-595f-4dc5-9ee3-a6395d57ea8f
+  name: tes
+  namespace: default-env1593166500865
+spec:
+  rules:
+  - host: hnm
+    http:
+      paths:
+      - backend:
+          serviceName: active-default-env-3192360657
+          servicePort: 8081
+        path: /
+  tls:
+  - hosts:
+    - hnm
+    secretName: tes-1609470400
