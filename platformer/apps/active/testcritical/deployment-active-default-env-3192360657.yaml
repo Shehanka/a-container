@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+  labels:
+    app_environment_id: 581c0043-d202-442c-8e09-defb125c48a4
+    b: test
+    env_id: 7d8dc4ed-9816-4f08-8b50-e2fd188b057f
+    env_name: testcritical
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  name: active-default-env-3192360657
+  namespace: criticaltest
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app_environment_id: 581c0043-d202-442c-8e09-defb125c48a4
+      env_id: 7d8dc4ed-9816-4f08-8b50-e2fd188b057f
+      env_name: testcritical
+      organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+      platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+      platformer_app_name: active
+      platformer_component: rudder
+      platformer_system: "true"
+      project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        platformer.com/reload-hash: ae42efaa-12e8-4031-a18e-a86f73a22e67
+      labels:
+        app_environment_id: 581c0043-d202-442c-8e09-defb125c48a4
+        env_id: 7d8dc4ed-9816-4f08-8b50-e2fd188b057f
+        env_name: testcritical
+        organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+        platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+        platformer_app_name: active
+        platformer_component: rudder
+        platformer_system: "true"
+        project_id: 165f9b1a-b501-457f-902b-ac957491213c
+    spec:
+      containers:
+      - args: []
+        command: []
+        envFrom: []
+        image: busybox:1.28
+        imagePullPolicy: IfNotPresent
+        name: ddfgfdg
+        ports: []
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+        volumeMounts: []
+      - args: []
+        command: []
+        envFrom: []
+        image: nginx:latest
+        imagePullPolicy: Always
+        name: nginx
+        ports:
+        - containerPort: 8080
+          name: port-8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 256Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts: []
+      - args: []
+        command:
+        - /bin/sh
+        - -c
+        - tail -f /hello/lol.txt
+        envFrom: []
+        image: busybox:1.28
+        imagePullPolicy: IfNotPresent
+        name: log-streamer
+        ports: []
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+        volumeMounts:
+        - mountPath: /dd
+          name: 9e1184e4-27fc-4653-9cae-50fa267892be
+      - args: []
+        command: []
+        envFrom: []
+        image: nginx:latest
+        imagePullPolicy: Always
+        name: tyy
+        ports:
+        - containerPort: 8081
+          name: port-8081
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts: []
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: sasa-3473157237
+        name: 9e1184e4-27fc-4653-9cae-50fa267892be
