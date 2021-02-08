@@ -1,0 +1,24 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  annotations: null
+  labels:
+    app_environment_id: 92f26a45-6062-44c1-9896-580c18a2231f
+    env_id: 592cc85a-3c16-4da3-b69b-56b88b0006c1
+    env_name: test-cert
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+    vpa_id: 7cc6b841-5a8b-4896-9184-5f04c8991766
+  name: active-test-cert-3192360657
+  namespace: staging
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: active-test-cert-3192360657
+  updatePolicy:
+    updateMode: "Off"
