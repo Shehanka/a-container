@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/protocol: http
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: balanced
+    nginx.ingress.kubernetes.io/backend-protocol: http
+    nginx.ingress.kubernetes.io/permanent-redirect-code: "301"
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+    platformer_ingress_id: c0e3a503-55d5-4fab-b12a-18cea2e5f25c
+    traefik.ingress.kubernetes.io/affinity: "true"
+    traefik.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+  labels:
+    platformer_ingress_id: c0e3a503-55d5-4fab-b12a-18cea2e5f25c
+  name: fg
+  namespace: default-env1593166500865
+spec:
+  rules:
+  - host: fgfg
+    http:
+      paths:
+      - backend:
+          serviceName: active-default-env-3192360657
+          servicePort: 8080
+        path: /
+  tls:
+  - hosts:
+    - fgfg
+    secretName: nov-1605671761
