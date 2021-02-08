@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    platformer_ingress_id: 7aca2372-bf45-448a-8a81-bac24f76ea46
+  labels:
+    platformer_ingress_id: 7aca2372-bf45-448a-8a81-bac24f76ea46
+  name: test1
+  namespace: sdfsd
+spec:
+  rules:
+  - host: dsfdfsd
+    http:
+      paths:
+      - backend:
+          serviceName: active
+          servicePort: 81
+        path: /
+  tls:
+  - hosts:
+    - dsfdfsd
+    secretName: ""
