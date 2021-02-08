@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+  labels:
+    app_environment_id: e69fcad2-1244-4237-a223-a0937b528647
+    env_id: 52b3e7c8-601b-41f4-b2fd-8c554c86926b
+    env_name: asdas
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  name: active
+  namespace: sadasda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app_environment_id: e69fcad2-1244-4237-a223-a0937b528647
+      env_id: 52b3e7c8-601b-41f4-b2fd-8c554c86926b
+      env_name: asdas
+      organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+      platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+      platformer_app_name: active
+      platformer_component: rudder
+      platformer_system: "true"
+      project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        platformer.com/reload-hash: 545df5bf-c25a-4ad4-bf52-53d2ef158dab
+      labels:
+        app_environment_id: e69fcad2-1244-4237-a223-a0937b528647
+        env_id: 52b3e7c8-601b-41f4-b2fd-8c554c86926b
+        env_name: asdas
+        organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+        platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+        platformer_app_name: active
+        platformer_component: rudder
+        platformer_system: "true"
+        project_id: 165f9b1a-b501-457f-902b-ac957491213c
+    spec:
+      containers:
+      - args: []
+        command: []
+        envFrom: []
+        image: nginx:latest
+        imagePullPolicy: Always
+        name: dsfds
+        ports: []
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts: []
+      - image: nginx:latest
+        imagePullPolicy: Always
+        name: nginx
+        ports:
+        - containerPort: 8080
+          name: port-8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 256Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
