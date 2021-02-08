@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+  labels:
+    app_environment_id: 5448f5ec-1514-49b8-918d-d89322c12c54
+    env_id: 995bf0d1-010a-4655-86f0-331b749ab3c9
+    env_name: t3
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  name: active-default-env-3192360657
+  namespace: fddfdf
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app_environment_id: 5448f5ec-1514-49b8-918d-d89322c12c54
+      env_id: 995bf0d1-010a-4655-86f0-331b749ab3c9
+      env_name: t3
+      organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+      platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+      platformer_app_name: active
+      platformer_component: rudder
+      platformer_system: "true"
+      project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        platformer.com/reload-hash: 1d509ef0-e374-4f90-8834-86ad37949f8f
+      labels:
+        app_environment_id: 5448f5ec-1514-49b8-918d-d89322c12c54
+        env_id: 995bf0d1-010a-4655-86f0-331b749ab3c9
+        env_name: t3
+        organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+        platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+        platformer_app_name: active
+        platformer_component: rudder
+        platformer_system: "true"
+        project_id: 165f9b1a-b501-457f-902b-ac957491213c
+    spec:
+      containers:
+      - args: []
+        command: []
+        envFrom: []
+        image: nginx:latest2
+        imagePullPolicy: Always
+        name: nginx
+        ports:
+        - containerPort: 8080
+          name: port-8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 256Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts: []
+      restartPolicy: Always
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 60
