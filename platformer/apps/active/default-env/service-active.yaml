@@ -13,7 +13,7 @@ metadata:
     platformer_system: "true"
     project_id: 165f9b1a-b501-457f-902b-ac957491213c
   name: active
-  namespace: "default"
+  namespace: ""
 spec:
   selector:
     app_environment_id: 5ef067e2-a992-4e1e-a7de-44a718c92374
