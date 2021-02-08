@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app_environment_id: 5d360e73-6534-4ba5-99ed-849daddad555
+    env_id: c392930e-6a09-470d-9de0-59a2372ceb08
+    env_name: default-env
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+    test: kcd
+  name: active-default-env-3192360657
+  namespace: default-env1593166500865
+spec:
+  ports:
+  - name: port-8081
+    port: 8081
+    targetPort: 8081
+  selector:
+    app_environment_id: 5d360e73-6534-4ba5-99ed-849daddad555
+    env_id: c392930e-6a09-470d-9de0-59a2372ceb08
+    env_name: default-env
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  type: ClusterIP
