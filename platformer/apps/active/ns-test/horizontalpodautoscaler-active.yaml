@@ -1,0 +1,29 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: null
+  labels:
+    app_environment_id: 6f40ba81-ab9a-44c4-806d-89f9ac1c369e
+    env_id: 6a2c7519-2e36-4b54-be62-196b1a7a01d7
+    env_name: ns-test
+    hpa_id: 1862ff0a-2f20-417f-9833-89e9aa1c856f
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  name: active
+  namespace: test-multiple-ns
+spec:
+  maxReplicas: 1
+  metrics:
+  - resource:
+      name: memory
+      targetAverageValue: 46Mi
+    type: Resource
+  minReplicas: 0
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: active
