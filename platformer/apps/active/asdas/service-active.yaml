@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app_environment_id: e69fcad2-1244-4237-a223-a0937b528647
+    env_id: 52b3e7c8-601b-41f4-b2fd-8c554c86926b
+    env_name: asdas
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  name: active
+  namespace: sadasda
+spec:
+  ports:
+  - name: port-8080
+    port: 8080
+    targetPort: 8080
+  selector:
+    app_environment_id: e69fcad2-1244-4237-a223-a0937b528647
+    env_id: 52b3e7c8-601b-41f4-b2fd-8c554c86926b
+    env_name: asdas
+    organization_id: 6c869bc0-38b8-4504-bfed-9c5da7c8f15a
+    platformer_app_id: 8e72a7ad-a394-42e3-be56-5c5e3463a0e4
+    platformer_app_name: active
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: 165f9b1a-b501-457f-902b-ac957491213c
+  type: ClusterIP
