@@ -1,0 +1,29 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg
+      - TAG_NAME=$SHORT_SHA
+      - --build-arg
+      - SHORT_SHA=$SHORT_SHA
+      - -t
+      - gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME
+      - -f
+      - ./Dockerfile
+      - .
+  - name: gcr.io/cloud-builders/curl
+    entrypoint: curl
+    args:
+      - --header
+      - "x-organization-id: c569bcc5-3d17-4a08-a77b-693d841360c6"
+      - --header
+      - "x-project-id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b"
+      - -d
+      - '{ "channel": "default",  "update_type": "patch", "container_id":
+        e67d840a-40ad-4021-b5a7-f7bdb7d198f2,  "image_name_with_tag":
+        "gcr.io/$PROJECT_ID/$REPO_NAME:$TAG_NAME"}'
+      - -X
+      - POST
+      - https://ambassador.dev.platformer.com/rudder/webhook/v1/container?token=${_TOKEN}
+images:
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
