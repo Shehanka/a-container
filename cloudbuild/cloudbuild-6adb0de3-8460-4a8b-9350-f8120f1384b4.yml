@@ -4,8 +4,6 @@ steps:
       - build
       - --build-arg
       - TAG_NAME=$SHORT_SHA
-      - --build-arg
-      - SHORT_SHA=$SHORT_SHA
       - -t
       - gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
       - -f
