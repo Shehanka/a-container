@@ -11,7 +11,7 @@ steps:
       - --build-arg
       - TAG_NAME=$SHORT_SHA
       - -t
-      - chamodshehanka/a-container
+      - chamodshehanka/a-container:$SHORT_SHA
       - -f
       - Dockerfile
       - .
