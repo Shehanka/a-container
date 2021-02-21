@@ -1,5 +1,4 @@
 steps:
-  - null
   - name: gcr.io/cloud-builders/docker
     args:
       - build
@@ -10,7 +9,6 @@ steps:
       - -f
       - Dockerfile
       - .
-  - null
   - name: gcr.io/cloud-builders/curl
     entrypoint: curl
     args:
