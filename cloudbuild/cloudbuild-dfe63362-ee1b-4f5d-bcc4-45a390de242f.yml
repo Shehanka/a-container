@@ -3,7 +3,7 @@ steps:
     entrypoint: bash
     args:
       - -c
-      - eval docker login -u $_DOCKER_PASSWORD -p $_DOCKER_PASSWORD
+      - docker login -u $_DOCKER_USERNAME -p $_DOCKER_PASSWORD
   - name: gcr.io/cloud-builders/docker
     args:
       - build
