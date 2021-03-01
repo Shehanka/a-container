@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+  labels:
+    app_environment_id: f2e0bef0-59ef-4269-8d2e-714743011c79
+    env_id: ac82d0b0-7250-4388-86ad-7277871c93cb
+    env_name: test-env
+    organization_id: c569bcc5-3d17-4a08-a77b-693d841360c6
+    platformer_app_id: 311a2d42-b43d-4ebf-b914-dec5bf8eead5
+    platformer_app_name: Test
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b
+  name: test-test-env-3192360657
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app_environment_id: f2e0bef0-59ef-4269-8d2e-714743011c79
+      env_id: ac82d0b0-7250-4388-86ad-7277871c93cb
+      env_name: test-env
+      organization_id: c569bcc5-3d17-4a08-a77b-693d841360c6
+      platformer_app_id: 311a2d42-b43d-4ebf-b914-dec5bf8eead5
+      platformer_app_name: Test
+      platformer_component: rudder
+      platformer_system: "true"
+      project_id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        platformer.com/reload-hash: 19a9bc91-fa56-47db-ad74-9427c777dfcc
+      labels:
+        app_environment_id: f2e0bef0-59ef-4269-8d2e-714743011c79
+        env_id: ac82d0b0-7250-4388-86ad-7277871c93cb
+        env_name: test-env
+        organization_id: c569bcc5-3d17-4a08-a77b-693d841360c6
+        platformer_app_id: 311a2d42-b43d-4ebf-b914-dec5bf8eead5
+        platformer_app_name: Test
+        platformer_component: rudder
+        platformer_system: "true"
+        project_id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b
+    spec:
+      containers:
+      - args: []
+        command: []
+        envFrom:
+        - configMapRef:
+            name: sdfd-3985559518
+        image: abc-institute-api
+        imagePullPolicy: Always
+        name: abc-institute-api
+        ports:
+        - containerPort: 4000
+          name: port-4000
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 330m
+            memory: 256Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: some-folder/some-file.json
+          name: 6cb94ff4-6a33-4cbd-a592-22f6aab7ca42
+          subPath: sadsd
+        - mountPath: test
+          name: 3be020fa-3d6f-4613-8a3c-e28ca249d6d5
+          subPath: test
+      imagePullSecrets:
+      - name: test-kdrsnpcm-3192360657
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: test-config-2719164533
+        name: 6cb94ff4-6a33-4cbd-a592-22f6aab7ca42
+      - configMap:
+          defaultMode: 420
+          name: configtestname-3417482049
+        name: 3be020fa-3d6f-4613-8a3c-e28ca249d6d5
