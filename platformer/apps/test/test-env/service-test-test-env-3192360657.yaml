@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app_environment_id: f2e0bef0-59ef-4269-8d2e-714743011c79
+    env_id: ac82d0b0-7250-4388-86ad-7277871c93cb
+    env_name: test-env
+    organization_id: c569bcc5-3d17-4a08-a77b-693d841360c6
+    platformer_app_id: 311a2d42-b43d-4ebf-b914-dec5bf8eead5
+    platformer_app_name: Test
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b
+  name: test-test-env-3192360657
+  namespace: test
+spec:
+  ports:
+  - name: port-4000
+    port: 4000
+    targetPort: 4000
+  selector:
+    app_environment_id: f2e0bef0-59ef-4269-8d2e-714743011c79
+    env_id: ac82d0b0-7250-4388-86ad-7277871c93cb
+    env_name: test-env
+    organization_id: c569bcc5-3d17-4a08-a77b-693d841360c6
+    platformer_app_id: 311a2d42-b43d-4ebf-b914-dec5bf8eead5
+    platformer_app_name: Test
+    platformer_component: rudder
+    platformer_system: "true"
+    project_id: b9bb816b-cf68-43c7-bddc-a92ea9f7743b
+  type: ClusterIP
