@@ -2,7 +2,7 @@ name: Platformer Generated cat Build
 'on':
   push:
     branches:
-      - main
+      - branch2
 jobs:
   build:
     runs-on:
